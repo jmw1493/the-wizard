@@ -17,7 +17,7 @@ const server = http.createServer((req, res) => {
   } else if (req.url == "/instagram") {
     res
       .writeHead(301, {
-        Location: `http://www.instagram.com`,
+        Location: `instagram://user?username=jaredonajourney`,
       })
       .end();
     // res.writeHead(200, { "Content-Type": "text/html" });
