@@ -15,11 +15,18 @@ const server = http.createServer((req, res) => {
     res.write("<html><body><p>This is the home Page.</p></body></html>");
     res.end();
   } else if (req.url == "/instagram/:username") {
-    res
-      .writeHead(301, {
-        Location: `instagram://user?username=${req.params.username}`,
-      })
-      .end();
+    res.writeHead(200, { "Content-Type": "text/html" });
+
+    // set response content
+    res.write(
+      `<html><body><p>username: ${req.params.username}</p></body></html>`
+    );
+    res.end();
+    // res
+    //   .writeHead(301, {
+    //     Location: `instagram://user?username=${req.params.username}`,
+    //   })
+    //   .end();
     // res.writeHead(200, { "Content-Type": "text/html" });
     // res.write("<html><body><p>Opening IG in new tab.</p></body></html>");
     // (async () => {
