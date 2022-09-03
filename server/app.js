@@ -14,10 +14,10 @@ const server = http.createServer((req, res) => {
     // set response content
     res.write("<html><body><p>This is the home Page.</p></body></html>");
     res.end();
-  } else if (req.url == "/instagram") {
+  } else if (req.url == "/instagram/:username") {
     res
       .writeHead(301, {
-        Location: `instagram://user?username=great_expectaseans`,
+        Location: `instagram://user?username=${req.params.username}`,
       })
       .end();
     // res.writeHead(200, { "Content-Type": "text/html" });
