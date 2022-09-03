@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
     // res.end();
     res
       .writeHead(301, {
-        Location: `instagram://user?username=${req.params.username}`,
+        Location: `instagram://user?username=${username}`,
       })
       .end();
     // res.writeHead(200, { "Content-Type": "text/html" });
