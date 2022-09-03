@@ -18,5 +18,8 @@
   "homepage": "https://github.com/jmw1493/the-wizard#readme",
   "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "open": "^8.4.0"
   }
 }
