@@ -15,31 +15,31 @@ const server = http.createServer((req, res) => {
     res.write("<html><body><p>This is the home Page.</p></body></html>");
     res.end();
   } else if (req.url == "/instagram") {
-    res.writeHead(200, { "Content-Type": "text/html" });
-    res.write("<html><body><p>Opening IG in new tab.</p></body></html>");
-    // (async () => {
-    //   // Opens the image in the default image viewer and waits for the opened app to quit.
-    //   // await open("unicorn.png", { wait: true });
-    //   // console.log("The image viewer app quit");
+    // res.writeHead(200, { "Content-Type": "text/html" });
+    // res.write("<html><body><p>Opening IG in new tab.</p></body></html>");
+    (async () => {
+      // Opens the image in the default image viewer and waits for the opened app to quit.
+      // await open("unicorn.png", { wait: true });
+      // console.log("The image viewer app quit");
 
-    //   // Opens the URL in the default browser.
-    //   await open("instagram://user?username=jaredonajourney");
-    //   // await open("http://www.instagram.com");
+      // Opens the URL in the default browser.
+      await open("instagram://user?username=jaredonajourney");
+      // await open("http://www.instagram.com");
 
-    //   // Opens the URL in a specified browser.
-    //   // await open("https://sindresorhus.com", { app: "firefox" });
+      // Opens the URL in a specified browser.
+      // await open("https://sindresorhus.com", { app: "firefox" });
 
-    //   // Specify app arguments.
-    //   // await open("https://sindresorhus.com", {
-    //   //   app: ["google chrome", "--incognito"],
-    //   // });
-    //   res.writeHead(200, { "Content-Type": "text/html" });
-    //   res.write("<html><body><p>Opened IG in new tab.</p></body></html>");
-    //   res.end();
-    // })();
+      // Specify app arguments.
+      // await open("https://sindresorhus.com", {
+      //   app: ["google chrome", "--incognito"],
+      // });
+      res.writeHead(200, { "Content-Type": "text/html" });
+      res.write("<html><body><p>Opened IG in new tab.</p></body></html>");
+      res.end();
+    })();
     // open("http://www.instagram.com");
     // open("instagram://user?username=jaredonajourney");
-    res.end();
+    // res.end();
   } else if (req.url == "/student") {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write("<html><body><p>This is student Page.</p></body></html>");
