@@ -17,7 +17,7 @@ const server = http.createServer((req, res) => {
   } else if (req.url.match(/\/instagram\/.+/)) {
     // in express could do /instagram/:username
     // then access w/ req/params.username
-    var username = req.url.split("/")[1];
+    var username = req.url.split("/")[2];
     res.writeHead(200, { "Content-Type": "text/html" });
 
     // set response content
