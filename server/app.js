@@ -14,13 +14,14 @@ const server = http.createServer((req, res) => {
     // set response content
     res.write("<html><body><p>This is the home Page.</p></body></html>");
     res.end();
-  } else if (req.url == "/instagram/:username") {
+  } else if (req.url.match(/\/instagram\/.+/)) {
+    // in express could do /instagram/:username
+    // then access w/ req/params.username
+    var username = req.url.split("/")[1];
     res.writeHead(200, { "Content-Type": "text/html" });
 
     // set response content
-    res.write(
-      `<html><body><p>username: ${req.params.username}</p></body></html>`
-    );
+    res.write(`<html><body><p>username: ${username}</p></body></html>`);
     res.end();
     // res
     //   .writeHead(301, {
