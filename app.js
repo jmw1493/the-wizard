@@ -23,8 +23,8 @@ const server = http.createServer((req, res) => {
       // console.log("The image viewer app quit");
 
       // Opens the URL in the default browser.
-      await open("instagram://user?username=jaredonajourney");
-      // await open("http://www.instagram.com");
+      // await open("instagram://user?username=jaredonajourney");
+      await open("http://www.instagram.com");
 
       // Opens the URL in a specified browser.
       // await open("https://sindresorhus.com", { app: "firefox" });
