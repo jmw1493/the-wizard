@@ -15,6 +15,8 @@ const server = http.createServer((req, res) => {
     res.write("<html><body><p>This is the home Page.</p></body></html>");
     res.end();
   } else if (req.url == "/instagram") {
+    res.writeHead(200, { "Content-Type": "text/html" });
+    res.write("<html><body><p>Opening IG in new tab.</p></body></html>");
     (async () => {
       // Opens the image in the default image viewer and waits for the opened app to quit.
       // await open("unicorn.png", { wait: true });
