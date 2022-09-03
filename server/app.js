@@ -18,16 +18,16 @@ const server = http.createServer((req, res) => {
     // in express could do /instagram/:username
     // then access w/ req/params.username
     var username = req.url.split("/")[2];
-    res.writeHead(200, { "Content-Type": "text/html" });
+    // res.writeHead(200, { "Content-Type": "text/html" });
 
-    // set response content
-    res.write(`<html><body><p>username: ${username}</p></body></html>`);
-    res.end();
-    // res
-    //   .writeHead(301, {
-    //     Location: `instagram://user?username=${req.params.username}`,
-    //   })
-    //   .end();
+    // // set response content
+    // res.write(`<html><body><p>username: ${username}</p></body></html>`);
+    // res.end();
+    res
+      .writeHead(301, {
+        Location: `instagram://user?username=${req.params.username}`,
+      })
+      .end();
     // res.writeHead(200, { "Content-Type": "text/html" });
     // res.write("<html><body><p>Opening IG in new tab.</p></body></html>");
     // (async () => {
